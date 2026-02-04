@@ -1,0 +1,15 @@
+<span style="font-size:30px"> Resource API </span> &nbsp;
+
+    @if (users.isLoading()) {
+      <p>Loading...</p>
+    }
+    @else if (users.error()) {
+      <p>Error loading users</p>
+    }
+    @else {
+      <ul>
+        @for (user of users.value(); track user.id) {
+          <li>{{ user.title }}</li>
+        }
+      </ul>
+    }

@@ -1,0 +1,28 @@
+<span style="font-size:30px">Interpolation</span>
+<p>{{ inter }}</p>
+
+
+<span style="font-size:30px">Property Binding</span><br/>
+<input type="text" [value]="propertyBinding" style="width: 400px;">
+
+
+<br/><br/>
+<span style="font-size:30px">Event Binding</span><br/>
+<input class ="btn btn-outline-dark" type="button" (click)="showAlert();" value="Click me to show alert">
+
+
+<br/><br/>
+<span style="font-size:30px">Two Binding</span><br/>
+<input type="text" style="width: 400px;" [(ngModel)]="data">
+<p>{{ data }}</p>
+
+<br/><br/>
+<span style="font-size:30px">Combined Binding</span><br/>
+<input type="text" [value] = "sample" (input)="onInput($event)" style="width: 400px;">
+<p>{{ sample }}</p>
+
+
+<br/><br/>
+<span style="font-size:30px">Signal Binding</span><br/>
+<button class ="btn btn-outline-dark" (click)="name.set('Signals value change')">click to change text</button>
+<p>{{ name() }}</p>

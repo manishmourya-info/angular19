@@ -1,0 +1,36 @@
+<span style="font-size:30px">Structural Directive</span>
+<br/>
+
+<span style="font-size:30px">*ngIf</span>
+<p *ngIf="checkDisplay">directive works!</p>
+
+
+<span style="font-size:30px">*ngFor</span>
+<div class="container">
+    <ul>
+        <li *ngFor="let val of classArry; index as i" id="{{i}}">{{ val }}</li>
+    </ul>
+</div>
+
+<span style="font-size:30px">*ngSwitch</span>
+<div class="container" [ngSwitch]="roleid">
+        <p *ngSwitchCase="1">Admin</p>
+        <p *ngSwitchCase="2">User</p>
+        <p *ngSwitchCase="3">Guest</p>
+        <p *ngSwitchDefault>Default</p>
+</div>
+
+
+<span style="font-size:30px">Attribute Directive</span>
+<br/>
+<span style="font-size:30px">ngClass</span><br/>
+<input type="button" [ngClass]="toggleClass ? 'success' : 'fail'" value="ngClass" (click)="toggleClass=!toggleClass">
+
+<br/><br/>
+<span style="font-size:30px">ngStyle</span><br/>
+<input type="button" [ngStyle]="style" value="ngStyle" >
+
+
+<br/><br/>
+<span style="font-size:30px">Custom Attribute Directive</span><br/>
+<p Bold>Make all text bold</p>

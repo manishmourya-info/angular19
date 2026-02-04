@@ -1,0 +1,42 @@
+<h3>Complex Reactive Form!</h3>
+
+<form [formGroup]="form">
+
+  <!-- STAGE 1 -->
+  <div class="container"  *ngIf="currentStage() === 1" formGroupName="personal">
+    <input class="form-control" formControlName="name" placeholder="Name">
+    <br/>
+    <input class="form-control" formControlName="age" type="number" placeholder="Age">
+    <div *ngIf="form.get('personal.age')?.errors?.['adult'] && form.get('personal.age')?.touched">
+      Must be 18+
+    </div>
+    <br/>
+    <button class="btn btn-secondary" type="button" (click)="nextStage()">Next</button>
+  </div>
+
+  <!-- STAGE 2 -->
+  <div *ngIf="currentStage() === 2">
+
+    <div class="form-control" formArrayName="skills">
+      <div *ngFor="let skill of skills.controls; let i = index"
+           [formGroupName]="i">
+        <br/>
+        <input class="form-control" formControlName="name" placeholder="Skill">
+        <br/>
+        <input class="form-control" formControlName="experience" type="number" placeholder="Years">
+        <br/>
+        <button class="btn btn-secondary" type="button" (click)="removeSkill(i)">Remove</button>
+      </div>
+    </div>
+
+    <div *ngIf="skills.errors?.['minSkills']">
+      Add at least one skill
+    </div>
+    <br/><br/>
+    <button class="btn btn-secondary" type="button" (click)="addSkill()">Add Skill</button>
+    &nbsp;
+    <button class="btn btn-primary" type="button" (click)="submit()">Submit</button>
+
+  </div>
+
+</form>

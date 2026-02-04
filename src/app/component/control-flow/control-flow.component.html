@@ -1,0 +1,23 @@
+<span style="font-size:30px"> if control</span>
+@if(showcontent) {
+    <p> Show this content </p>
+}
+@else {
+    <p> Hide this content </p>
+}
+
+<br/>
+<span style="font-size:30px"> for control</span>
+    <ul>
+    @for(val of array; track val; let i = $index) {
+        <li>{{ val }}</li>
+    }
+    </ul>
+
+<br/>
+<span style="font-size:30px"> Switch Control</span>
+    @switch (switchid) {
+        @case(1) { <p> It's Show </p> }
+        @case(2) { <p> It's Hide </p> }
+        @default { <p> It's default </p> }
+    }

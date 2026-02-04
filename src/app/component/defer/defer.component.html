@@ -1,0 +1,37 @@
+<br/><br/>
+<span style="font-size:30px"> On timer</span> &nbsp;
+@defer (on timer(5s)) { 
+    <p> this block will show after 5 seconds</p>
+}
+
+
+<br/><br/>
+<span style="font-size:30px"> On condition</span> &nbsp;
+<input type="button" value="Click to display text" (click)="isLoggedIn = !isLoggedIn;">
+@defer (when isLoggedIn) {
+		<p> this block will show when condition is matched</p>
+} 
+
+<br/><br/>
+<span style="font-size:30px"> On interaction</span> &nbsp;
+@defer (on interaction) {
+		<p> this block will show when we intract with UI</p>
+}
+@placeholder {
+      <p>Loading...</p>
+}
+
+<br/><br/>
+<span style="font-size:30px"> On idle</span> &nbsp;
+@defer (on idle) {
+	<p> this block will show when we browser on idle state</p>
+}
+
+<br/><br/>
+<span style="font-size:30px"> On viewport</span> &nbsp;
+@defer (on viewport) {
+	<p> this block will show when we are on view port</p>
+}
+@placeholder {
+      <p>Loading...</p>
+}
