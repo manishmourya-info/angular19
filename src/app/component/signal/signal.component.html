@@ -1,0 +1,21 @@
+<span style="font-size:30px">Signals</span>
+<br/>
+
+<br/>
+<h4 style="font-size:20px">Counter with signal</h4>
+<br/>
+<input class="btn btn-secondary" type="button" (click)="increment()" value="+">
+&nbsp;&nbsp;
+<span>Counter : {{ counter() }}</span>
+&nbsp;&nbsp;
+<input class="btn btn-secondary" type="button" (click)="decrement()" value="-">
+&nbsp;&nbsp;
+<input class="btn btn-secondary" type="button" (click)="reset()" value="Reset">
+
+
+<br/><br/>
+<h4 style="font-size:20px">Readonly Signal</h4>
+<br/>
+&nbsp;&nbsp;
+<span>Counter : {{ count() }}</span>
+&nbsp;&nbsp;

@@ -9,9 +9,11 @@ import { HttpClientComponent } from './component/http-client/http-client.compone
 import { PipesComponent } from './component/pipes/pipes.component';
 import { TemplateDrivenFormComponent } from './component/template-driven-form/template-driven-form.component';
 import { ReactiveFormComponent } from './component/reactive-form/reactive-form.component';
-import { FormBuilder } from '@angular/forms';
 import { ComplexFormComponent } from './component/complex-form/complex-form.component';
 import { FormBuilderComponent } from './component/form-builder/form-builder.component';
+import { SignalComponent } from './component/signal/signal.component';
+import { ComputedSignalComponent } from './component/computed-signal/computed-signal.component';
+import { LinkedSignalComponent } from './component/linked-signal/linked-signal.component';
 
 export const routes: Routes = [
     {path : "dataBinding",component : DataBindingComponent},
@@ -26,4 +28,7 @@ export const routes: Routes = [
     {path : "reactive-form",component : ReactiveFormComponent},
     {path : "form-builder",component : FormBuilderComponent},
     {path : "complex-form",component : ComplexFormComponent},
+    {path : "signals",component : SignalComponent},
+    {path : "computed-signal",component : ComputedSignalComponent},
+    {path : "linked-signal",component : LinkedSignalComponent},
 ];

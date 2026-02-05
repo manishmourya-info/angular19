@@ -1,0 +1,47 @@
+<h4>Linked Signal</h4>
+<pre>
+    <p>
+        A linked signal is a writable signal whose value is derived from another signal, but can also be manually overridden.
+    </p>
+</pre>
+<br/>
+
+<label>Price :&nbsp; </label><input type="number" name="price" id="price" [(ngModel)]="price">
+&nbsp;
+<label>Quantity :&nbsp; </label><input type="number" name="quantity" id="quantity" [(ngModel)]="quantity">
+&nbsp;
+<label>Total :&nbsp; {{ total() }} </label>
+<br/><br/>
+<input class="btn-secondary" type="button" value="Reset" (click)="reset()">
+
+<br/><br/>
+<h5 class="mb-3 mt-3">Parent and child linked signal</h5>
+<pre>
+    <p>
+        A linked signal is a writable signal that derives its value from another signal but can be independently updated when needed.
+        Behavior:
+	        childCount() starts with 10
+	        If parentCount changes → childCount updates
+	        If you manually set childCount → it diverges
+    </p>
+</pre>
+<br/>
+
+
+<br/>
+<input class="btn btn-secondary" type="button" (click)="incrementP()" value="+">
+&nbsp;&nbsp;
+<span>Parent Counter : {{ parentCounter() }}</span>
+&nbsp;&nbsp;
+<input class="btn btn-secondary" type="button" (click)="decrementP()" value="-">
+&nbsp;&nbsp;
+<input class="btn btn-secondary" type="button" (click)="resetP()" value="Reset">
+
+<br/><br/>
+<input class="btn btn-secondary" type="button" (click)="incrementC()" value="+">
+&nbsp;&nbsp;
+<span>Child Counter :&nbsp;&nbsp; {{ childCounter() }}</span>
+&nbsp;&nbsp;
+<input class="btn btn-secondary" type="button" (click)="decrementC()" value="-">
+&nbsp;&nbsp;
+<input class="btn btn-secondary" type="button" (click)="resetC()" value="Reset">

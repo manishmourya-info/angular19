@@ -1,0 +1,19 @@
+<h4>Computed Signal</h4>
+<pre>
+    <p>
+        derives its value from one or more signals
+        is lazy (only recalculates when read)
+        is memoized (won’t recompute unless dependencies change)
+        is read-only (you can’t .set() it)
+    </p>
+</pre>
+<br/>
+
+<label>Price :&nbsp; </label><input type="number" name="price" id="price" [(ngModel)]="price">
+&nbsp;
+<label>Quantity :&nbsp; </label><input type="number" name="quantity" id="quantity" [(ngModel)]="quantity">
+&nbsp;
+<label>Total :&nbsp; {{ total() }} </label>
+
+
+
