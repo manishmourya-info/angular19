@@ -1,3 +1,4 @@
+import { ChildRouteDetailsComponent } from './component/child-route-details/child-route-details.component';
 import { Routes } from '@angular/router';
 import { DataBindingComponent } from './component/data-binding/data-binding.component';
 import { DirectiveComponent } from './component/directive/directive.component';
@@ -14,8 +15,18 @@ import { FormBuilderComponent } from './component/form-builder/form-builder.comp
 import { SignalComponent } from './component/signal/signal.component';
 import { ComputedSignalComponent } from './component/computed-signal/computed-signal.component';
 import { LinkedSignalComponent } from './component/linked-signal/linked-signal.component';
+import { RouteComponent } from './component/route/route.component';
+import { LazyLoadingComponent } from './component/lazy-loading/lazy-loading.component';
+import { ChildRouteComponent } from './component/child-route/child-route.component';
+import { NotFoundComponent } from './component/not-found/not-found.component';
+import { ChildRouteListComponent } from './component/child-route-list/child-route-list.component';
+import { authGuard } from './guard/auth.guard';
+import { deactivateGuard } from './guard/deactivate.guard';
+import { matchGuard } from './guard/match.guard';
+import { childAuthGuard } from './guard/child-auth.guard';
 
 export const routes: Routes = [
+    {path: '', redirectTo: 'dataBinding', pathMatch: 'full' },
     {path : "dataBinding",component : DataBindingComponent},
     {path : "directive",component : DirectiveComponent},
     {path : "control-flow",component : ControlFlowComponent},
@@ -31,4 +42,30 @@ export const routes: Routes = [
     {path : "signals",component : SignalComponent},
     {path : "computed-signal",component : ComputedSignalComponent},
     {path : "linked-signal",component : LinkedSignalComponent},
+    {
+        path : "route",
+        component : RouteComponent,
+        data: { title: 'Dashboard' },
+        canActivate : [authGuard]
+
+    },
+    {path : "route/:id",component : RouteComponent},
+    {
+        path : "child-route",
+        component : ChildRouteComponent,
+        canActivateChild : [childAuthGuard],
+        children : [
+            {path : "",component : ChildRouteListComponent},
+            {path : ":id",component : ChildRouteDetailsComponent, canDeactivate : [deactivateGuard]},
+        ]
+    },
+    {
+        path : "lazy-load",
+        canMatch : [matchGuard],
+        loadComponent: () =>
+             import("./component/lazy-loading/lazy-loading.component")
+            .then(c => c.LazyLoadingComponent)
+    },
+    { path: '**', component: NotFoundComponent }
+
 ];

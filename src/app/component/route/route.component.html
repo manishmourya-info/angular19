@@ -1,0 +1,38 @@
+<h3>Route!</h3>
+<br/>
+
+
+<h5>Data : {{ title }} </h5>
+<br/>
+
+<h5>Path Param : {{ id }} </h5>
+<br/>
+
+<h5>Query Param : {{ category }} </h5>
+<br/>
+
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" routerLink="/dataBinding" >Data Binding</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/hooks">Hooks</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/child-route']">child Route</a>
+  </li>
+
+ <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/route',1]">Route With Path Param</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link" [routerLink]="['/route']" [queryParams] = "{ category: 'books', page: 2 }">Route With Query Param</a>
+  </li>
+
+ <li class="nav-item">
+    <a class="nav-link" (click)="click()">On click Route With Query Param</a>
+  </li>
+
+</ul>
