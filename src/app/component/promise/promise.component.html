@@ -1,0 +1,9 @@
+<h4>Promise</h4>
+
+<button class="btn btn-primary" *ngIf="users.length == 0" type="button" (click)="getUsers()">GET data using promise</button>
+
+<br/><br/>
+<p>{{ users | json }}</p>
+<br/>
+
+<button class="btn btn-primary" *ngIf="users.length == 0" type="button" (click)="loadUser()">Load data using async & wait function</button>

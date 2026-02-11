@@ -1,0 +1,11 @@
+<h3>Behavior Subject!</h3>
+
+<br/>
+<app-behavior-header></app-behavior-header>
+<br/><br/>
+
+<button (click)="theme.toggle()">
+    {{ theme.theme() === 'dark' ? '🌙 Dark' : '☀️ Light' }}
+ </button>
+
+

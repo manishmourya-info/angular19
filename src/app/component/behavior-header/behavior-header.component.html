@@ -1,0 +1,21 @@
+<label>
+      <input
+        type="radio"
+        name="theme"
+        value="light"
+        (change)="theme.set('light')"
+        [checked]="theme.theme() === 'light'"
+      />
+      Light
+    </label>
+    &nbsp;&nbsp;
+    <label>
+      <input
+        type="radio"
+        name="theme"
+        value="dark"
+        (change)="theme.set('dark')"
+        [checked]="theme.theme() === 'dark'"
+      />
+      Dark
+    </label>

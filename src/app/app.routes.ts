@@ -16,7 +16,6 @@ import { SignalComponent } from './component/signal/signal.component';
 import { ComputedSignalComponent } from './component/computed-signal/computed-signal.component';
 import { LinkedSignalComponent } from './component/linked-signal/linked-signal.component';
 import { RouteComponent } from './component/route/route.component';
-import { LazyLoadingComponent } from './component/lazy-loading/lazy-loading.component';
 import { ChildRouteComponent } from './component/child-route/child-route.component';
 import { NotFoundComponent } from './component/not-found/not-found.component';
 import { ChildRouteListComponent } from './component/child-route-list/child-route-list.component';
@@ -24,6 +23,11 @@ import { authGuard } from './guard/auth.guard';
 import { deactivateGuard } from './guard/deactivate.guard';
 import { matchGuard } from './guard/match.guard';
 import { childAuthGuard } from './guard/child-auth.guard';
+import { RxjsComponent } from './component/rxjs/rxjs.component';
+import { PromiseComponent } from './component/promise/promise.component';
+import { SubjectComponent } from './component/subject/subject.component';
+import { BehaviorSubjectComponent } from './component/behavior-subject/behavior-subject.component';
+import { RxjsOperatorsComponent } from './component/rxjs-operators/rxjs-operators.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'dataBinding', pathMatch: 'full' },
@@ -66,6 +70,11 @@ export const routes: Routes = [
              import("./component/lazy-loading/lazy-loading.component")
             .then(c => c.LazyLoadingComponent)
     },
+    {path : "rxjs",component : RxjsComponent},
+    {path : "promise",component : PromiseComponent},
+    {path : "subject",component : SubjectComponent},
+    {path : "behavior-subject",component : BehaviorSubjectComponent},
+    {path : "rxjs-operators",component : RxjsOperatorsComponent},
     { path: '**', component: NotFoundComponent }
 
 ];

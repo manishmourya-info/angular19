@@ -1,0 +1,36 @@
+<h4>RxJs Operators</h4>
+
+<br/>
+<h6>Filter</h6>
+<ul>
+@for (x of ofValues;track x) {
+    <li> {{ x }}</li>
+}
+</ul>
+
+
+
+<br/>
+<h6>Map</h6>
+<ul>
+@for (x of mapValues$ | async;track x) {
+    <li> {{ x.id }} - {{ x.name }}</li>
+}
+</ul>
+
+
+<br/>
+<h6>Take</h6>
+<ul>
+@for (x of takeValues;track x) {
+    <li> {{ x }}</li>
+}
+</ul>
+
+<br/>
+<h6>TakeUnil button click <input type="button" value="Click to Stop" (click)="stop()"></h6>
+<ul>
+@for (x of takeUntillValues;track x) {
+    <li> {{ x }}</li>
+}
+</ul>

@@ -1,0 +1,18 @@
+<h2>RxJs</h2>
+
+<h4>Basic Observable</h4>
+
+<h5>Observable using 'async'</h5>
+<ul>
+    <li><label>Observable :&nbsp; </label>{{ value$ | async  }}</li>
+    <li><label>Of:&nbsp; </label>{{ of$ | async  }}</li>
+    <li><label>from:&nbsp; </label>{{ from$ | async  }}</li>
+    <li><label>from using fetch:&nbsp; </label>{{ fetch$ | async | json }}</li>
+    <li><label>interval every second:&nbsp; </label>{{ interval$ | async  }}</li>
+    <li><label>timer 3's:&nbsp; </label>{{ timer$ | async  }}</li>
+</ul>
+
+<h5>Observable value capture inside subscribe</h5>
+<ul>
+    <li *ngFor="let value of values">{{ value  }}</li>
+</ul>
