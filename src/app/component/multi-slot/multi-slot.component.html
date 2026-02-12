@@ -1,0 +1,17 @@
+<h4 #multi>Multi Slot</h4>
+You can project different content into different places using selectors.
+<br/><br/>
+
+<app-multi-slot-child>
+  <h2 #header>Card Title</h2>
+  <p>Main content goes here.</p>
+  <button #footer>Save</button>
+</app-multi-slot-child>
+
+<br/>
+<pre>
+How it works
+[header] content goes into header slot
+[footer] content goes into footer slot
+Everything else goes into default
+</pre>

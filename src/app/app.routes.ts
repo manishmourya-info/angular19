@@ -28,6 +28,9 @@ import { PromiseComponent } from './component/promise/promise.component';
 import { SubjectComponent } from './component/subject/subject.component';
 import { BehaviorSubjectComponent } from './component/behavior-subject/behavior-subject.component';
 import { RxjsOperatorsComponent } from './component/rxjs-operators/rxjs-operators.component';
+import { SingleSlotComponent } from './component/single-slot/single-slot.component';
+import { MultiSlotComponent } from './component/multi-slot/multi-slot.component';
+import { NgTemplateComponent } from './component/ng-template/ng-template.component';
 
 export const routes: Routes = [
     {path: '', redirectTo: 'dataBinding', pathMatch: 'full' },
@@ -75,6 +78,11 @@ export const routes: Routes = [
     {path : "subject",component : SubjectComponent},
     {path : "behavior-subject",component : BehaviorSubjectComponent},
     {path : "rxjs-operators",component : RxjsOperatorsComponent},
-    { path: '**', component: NotFoundComponent }
+    {path : "single-slot",component : SingleSlotComponent},
+    {path : "multi-slot",component : MultiSlotComponent},
+    { path : "ng-template",
+      component : NgTemplateComponent 
+    },
+    {path: '**', component: NotFoundComponent }
 
 ];
