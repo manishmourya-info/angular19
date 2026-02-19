@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { from, interval, Observable, of, Subscription, timer } from 'rxjs';
+import { from, interval, Observable, of, Subscription, switchMap, timer } from 'rxjs';
 
 @Component({
   selector: 'app-rxjs',
@@ -19,7 +19,9 @@ export class RxjsComponent implements OnInit,OnDestroy {
   values : any[] | undefined = ["A", "B"];
   of$ = of(1, 2, 3);                 // emits values
   from$ = from([1, 2, 3]);             // from array
-  fetch$ = from(fetch('https://jsonplaceholder.typicode.com/todos/1'));    // from promise
+  fetch$ = from(fetch('https://jsonplaceholder.typicode.com/todos/1').then(
+    res => res.json()
+  ));    // from promise
   interval$ = interval(1000);              // every second
   timer$ = timer(3000);                 // after 2 seconds
 
